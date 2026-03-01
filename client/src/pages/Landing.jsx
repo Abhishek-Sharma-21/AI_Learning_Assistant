@@ -97,14 +97,14 @@ const Landing = () => {
 
         {/* Floating elements for visual interest */}
         <div className="max-w-7xl mx-auto mt-24 relative animate-in fade-in zoom-in-95 duration-1000 delay-700">
-          <div className="p-4 bg-slate-900/40 border border-slate-800/80 rounded-[48px] shadow-2xl backdrop-blur-sm relative">
-            <div className="aspect-video bg-[#0a0f1e] rounded-[32px] overflow-hidden border border-slate-800 flex relative group">
+          <div className="p-2 sm:p-4 bg-slate-900/40 border border-slate-800/80 rounded-[32px] sm:rounded-[48px] shadow-2xl backdrop-blur-sm relative">
+            <div className="aspect-[4/5] sm:aspect-square md:aspect-video bg-[#0a0f1e] rounded-[24px] sm:rounded-[32px] overflow-hidden border border-slate-800 flex relative group">
                 <div className="absolute inset-0 bg-linear-to-br from-emerald-500/5 to-teal-500/5" />
                 
                 {/* Simulated UI Mockup */}
-                <div className="absolute inset-0 p-6 flex gap-6">
+                <div className="absolute inset-0 p-3 sm:p-6 flex gap-3 sm:gap-6">
                   {/* Left Sidebar Mockup */}
-                  <div className="w-1/4 h-full bg-slate-900/60 rounded-2xl border border-slate-800/60 p-5 flex flex-col gap-6 relative overflow-hidden backdrop-blur-md">
+                  <div className="hidden lg:flex w-1/4 h-full bg-slate-900/60 rounded-2xl border border-slate-800/60 p-5 flex-col gap-6 relative overflow-hidden backdrop-blur-md">
                      <div className="w-full h-10 bg-slate-800/40 rounded-xl flex items-center px-4 gap-2 text-slate-400">
                         <Plus size={16} />
                         <span className="text-xs font-bold uppercase tracking-wider">New</span>
@@ -141,61 +141,64 @@ const Landing = () => {
                   </div>
                   
                   {/* Main Content Mockup */}
-                  <div className="flex-1 h-full flex flex-col gap-6">
+                  <div className="flex-1 h-full flex flex-col gap-3 sm:gap-6 min-w-0">
                      {/* Top Bar */}
-                     <div className="w-full h-16 bg-slate-900/60 rounded-2xl border border-slate-800/60 flex items-center justify-between px-6 backdrop-blur-md">
-                       <div className="flex items-center gap-2">
-                         <FileText size={18} className="text-slate-400" />
-                         <span className="text-sm font-semibold text-slate-200">Neural_Net_Design.pdf</span>
-                         <span className="px-2 py-0.5 bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase rounded-md ml-2 border border-emerald-500/20">Analyzed</span>
+                     <div className="w-full h-12 sm:h-16 bg-slate-900/60 rounded-2xl border border-slate-800/60 flex items-center justify-between px-3 sm:px-6 backdrop-blur-md">
+                       <div className="flex items-center gap-2 truncate">
+                         <FileText size={16} className="text-slate-400 shrink-0" />
+                         <span className="text-xs sm:text-sm font-semibold text-slate-200 truncate">Neural_Net_Design.pdf</span>
+                         <span className="hidden sm:inline-block px-2 py-0.5 bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase rounded-md ml-2 border border-emerald-500/20">Analyzed</span>
                        </div>
-                       <div className="flex gap-4 items-center">
-                         <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center">
-                           <Bell size={14} className="text-slate-400" />
+                       <div className="flex gap-2 sm:gap-4 items-center shrink-0">
+                         <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-slate-800 flex items-center justify-center">
+                           <Bell size={12} className="text-slate-400" />
                          </div>
-                         <div className="w-8 h-8 rounded-xl bg-linear-to-br from-emerald-500/50 to-teal-600/50 border border-emerald-400/30 flex items-center justify-center text-[10px] font-bold text-white">
+                         <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-linear-to-br from-emerald-500/50 to-teal-600/50 border border-emerald-400/30 flex items-center justify-center text-[8px] sm:text-[10px] font-bold text-white">
                            US
                          </div>
                        </div>
                      </div>
                      
                      {/* Content Viewer + AI Chat */}
-                     <div className="flex-1 w-full flex gap-6 z-10">
-                       <div className="flex-2 h-full bg-slate-900/60 rounded-2xl border border-slate-800/60 p-6 flex flex-col backdrop-blur-md relative overflow-hidden">
+                     <div className="flex-1 w-full flex gap-3 sm:gap-6 z-10 min-h-0">
+                       <div className="flex-2 h-full bg-slate-900/60 rounded-2xl border border-slate-800/60 p-4 sm:p-6 flex flex-col backdrop-blur-md relative overflow-hidden min-w-0">
                          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-emerald-500/5 blur-[100px] rounded-full pointer-events-none" />
                          
-                         <h3 className="text-lg font-bold text-white mb-6">4.2 Backpropagation Algorithm</h3>
+                         <h3 className="text-sm sm:text-lg font-bold text-white mb-3 sm:mb-6 truncate">4.2 Backpropagation Algorithm</h3>
                          
                          {/* Text lines */}
-                         <div className="space-y-4 mb-8 text-slate-400 text-sm leading-relaxed">
+                         <div className="space-y-2 sm:space-y-4 mb-4 sm:mb-8 text-slate-400 text-xs sm:text-sm leading-relaxed overflow-y-auto custom-scrollbar flex-1 pr-1 sm:pr-2">
                            <p>The backpropagation algorithm calculates the gradient of the error function with respect to the neural network's weights.</p>
                            <p className="opacity-70">It does this by propagating the error backward through the network, from the output layer to the hidden layers.</p>
-                           <div className="p-4 bg-slate-950/50 border border-slate-800 rounded-lg font-mono text-xs text-emerald-300 my-4">
+                           <div className="p-2 sm:p-4 bg-slate-950/50 border border-slate-800 rounded-lg font-mono text-[8px] sm:text-xs text-emerald-300 my-2 sm:my-4 overflow-x-auto whitespace-nowrap">
                              δ_j^l = \sum_k w_{'{'}jk{'}'}^{'{'}l+1{'}'} δ_k^{'{'}l+1{'}'} f'(z_j^l)
                            </div>
-                           <p className="opacity-50">This recursive formula allows for efficient computation of gradients for all weights in the network.</p>
+                           <p className="opacity-50 hidden sm:block">This recursive formula allows for efficient computation of gradients for all weights in the network.</p>
                          </div>
 
                          {/* Action Cards */}
-                         <div className="flex gap-4 mt-auto">
+                         <div className="flex gap-2 sm:gap-4 mt-auto">
                            {[
-                             { icon: FileText, title: "Executive Summary", desc: "1 page overview" },
-                             { icon: Layers, title: "Generate Flashcards", desc: "15 cards ready" },
-                             { icon: BrainCircuit, title: "Take Quiz", desc: "Test knowledge" }
+                             { icon: FileText, title: "Summary", desktopTitle: "Executive Summary", desc: "1 page overview" },
+                             { icon: Layers, title: "Flashcards", desktopTitle: "Generate Flashcards", desc: "15 cards ready" },
+                             { icon: BrainCircuit, title: "Quiz", desktopTitle: "Take Quiz", desc: "Test knowledge" }
                            ].map((item, i) => (
-                             <div key={i} className="flex-1 bg-linear-to-br from-slate-800/30 to-slate-800/10 rounded-xl border border-slate-700/30 p-4 flex flex-col group hover:border-emerald-500/40 hover:bg-emerald-500/5 transition-all cursor-pointer">
-                               <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                                  <item.icon size={16} className="text-emerald-400" />
+                             <div key={i} className="flex-1 min-w-0 bg-linear-to-br from-slate-800/30 to-slate-800/10 rounded-xl border border-slate-700/30 p-2 sm:p-4 flex flex-col items-center sm:items-start group hover:border-emerald-500/40 hover:bg-emerald-500/5 transition-all cursor-pointer">
+                               <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-1 sm:mb-3 group-hover:scale-110 transition-transform shrink-0">
+                                  <item.icon className="text-emerald-400 w-3 h-3 sm:w-4 sm:h-4" />
                                </div>
-                               <p className="text-xs font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">{item.title}</p>
-                               <p className="text-[10px] text-slate-500">{item.desc}</p>
+                               <p className="text-[9px] sm:text-xs font-bold text-white mb-0.5 sm:mb-1 group-hover:text-emerald-300 transition-colors w-full text-center sm:text-left truncate">
+                                 <span className="sm:hidden">{item.title}</span>
+                                 <span className="hidden sm:inline">{item.desktopTitle}</span>
+                               </p>
+                               <p className="text-[8px] sm:text-[10px] text-slate-500 truncate w-full hidden sm:block">{item.desc}</p>
                              </div>
                            ))}
                          </div>
                        </div>
                        
                        {/* AI Side Panel */}
-                       <div className="flex-1 h-full bg-slate-900/80 rounded-2xl border border-slate-800/80 flex flex-col p-5 relative overflow-hidden backdrop-blur-xl">
+                       <div className="hidden md:flex flex-1 h-full bg-slate-900/80 rounded-2xl border border-slate-800/80 flex-col p-5 relative overflow-hidden backdrop-blur-xl min-w-0">
                          <div className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-800">
                            <div className="w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center">
                              <Zap size={14} className="text-emerald-400 fill-emerald-400" />
