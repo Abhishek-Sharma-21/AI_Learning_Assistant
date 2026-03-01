@@ -5,7 +5,7 @@ export const fetchDocuments = createAsyncThunk(
   async (_, { getState, rejectWithValue }) => {
     try {
       const { auth: { token } } = getState();
-      const response = await fetch('http://localhost:5000/api/documents', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/documents`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (!response.ok) throw new Error('Failed to fetch documents');
@@ -21,7 +21,7 @@ export const fetchDocumentById = createAsyncThunk(
   async (id, { getState, rejectWithValue }) => {
     try {
       const { auth: { token } } = getState();
-      const response = await fetch(`http://localhost:5000/api/documents/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/documents/${id}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (!response.ok) throw new Error('Document not found');
@@ -37,7 +37,7 @@ export const generateSummaryWithFormat = createAsyncThunk(
   async ({ id, format }, { getState, rejectWithValue }) => {
     try {
       const { auth: { token } } = getState();
-      const response = await fetch(`http://localhost:5000/api/documents/${id}/summarize`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/documents/${id}/summarize`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ export const extractTopics = createAsyncThunk(
   async (id, { getState, rejectWithValue }) => {
     try {
       const { auth: { token } } = getState();
-      const response = await fetch(`http://localhost:5000/api/documents/${id}/topics`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/documents/${id}/topics`, {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -77,7 +77,7 @@ export const analyzeDocument = createAsyncThunk(
   async (id, { getState, rejectWithValue }) => {
     try {
       const { auth: { token } } = getState();
-      const response = await fetch(`http://localhost:5000/api/documents/${id}/analyze`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/documents/${id}/analyze`, {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -95,7 +95,7 @@ export const deleteDocument = createAsyncThunk(
   async (id, { getState, rejectWithValue }) => {
     try {
       const { auth: { token } } = getState();
-      const response = await fetch(`http://localhost:5000/api/documents/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/documents/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -112,7 +112,7 @@ export const generateQuiz = createAsyncThunk(
   async ({ id, count, topic }, { getState, rejectWithValue }) => {
     try {
       const { auth: { token } } = getState();
-      const response = await fetch(`http://localhost:5000/api/documents/${id}/quiz`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/documents/${id}/quiz`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',

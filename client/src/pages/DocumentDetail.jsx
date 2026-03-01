@@ -52,7 +52,7 @@ const DocumentDetail = () => {
     const fetchChatHistory = async () => {
       if (!token || !documentId) return;
       try {
-        const res = await fetch(`http://localhost:5000/api/documents/${documentId}/chat`, {
+        const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/documents/${documentId}/chat`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const history = await res.json();
@@ -136,7 +136,7 @@ const DocumentDetail = () => {
     setChatLoading(true);
 
     try {
-      const response = await fetch(`http://localhost:5000/api/documents/${documentId}/chat`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/documents/${documentId}/chat`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
