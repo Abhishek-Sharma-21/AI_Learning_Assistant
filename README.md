@@ -1,5 +1,7 @@
 # AI Learning Assistant
 
+**Live Demo:** [https://ai-learning-assistant-jet.vercel.app](https://ai-learning-assistant-jet.vercel.app)
+
 AI Learning Assistant is a full-stack web application designed to enhance your learning experience through artificial intelligence. Powered by the Gemini API, it allows users to upload documents, chat directly with those documents to extract insights, and generate customized quizzes based on specific focus areas.
 
 ## 🚀 Features
